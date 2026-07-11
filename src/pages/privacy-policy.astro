@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import LegalContent from "../components/LegalContent.astro";
+
+const sections = [
+  {
+    heading: "Overview",
+    paragraphs: [
+      `Elevation Finance ("we," "us," "our") publishes educational content about investing and personal finance at elevation-finance.com (the "Site"). This Privacy Policy explains what information the Site collects, how we use it, and the choices available to you.`,
+      `This policy covers elevation-finance.com only. Our mobile app, Elevation Finance Tools, is covered by a separate <a href="https://shiftedreality.dev/elevation-finance/privacy-policy/" target="_blank" rel="noopener noreferrer">App Privacy Policy</a>.`,
+    ],
+  },
+  {
+    heading: "Information We Collect",
+    paragraphs: [
+      `The Site does not require an account and has no login, comment, or newsletter signup at this time — we don't collect information you'd type into a form, because there isn't one.`,
+      `We use Google Analytics to understand how the Site is used. This automatically collects information such as pages viewed, approximate location (derived from IP address), device and browser type, referring site, and time spent on a page. This data is aggregated and is not used by us to identify you personally.`,
+    ],
+  },
+  {
+    heading: "Cookies",
+    paragraphs: [
+      `Google Analytics sets cookies to distinguish visitors and sessions. You can block or delete cookies through your browser settings, or opt out of Google Analytics tracking entirely using <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google's browser add-on</a>.`,
+    ],
+  },
+  {
+    heading: "How We Use Information",
+    paragraphs: [
+      `We use analytics data to understand which content is useful, fix what isn't working, and measure overall traffic. We do not sell visitor data, and we do not share it with anyone beyond the service providers described in this policy.`,
+    ],
+  },
+  {
+    heading: "Third-Party Services",
+    list: [
+      `<strong class="text-ef-white">Google Analytics</strong> — processes usage data as described above.`,
+      `<strong class="text-ef-white">Facebook</strong> and the <strong class="text-ef-white">App Store</strong> — the Site links to these services. Once you leave elevation-finance.com, their own privacy policies apply, not this one.`,
+    ],
+  },
+  {
+    heading: "Children's Privacy",
+    paragraphs: [
+      `The Site is not directed at children under 13, and we do not knowingly collect information from them.`,
+    ],
+  },
+  {
+    heading: "Your Rights and Choices",
+    paragraphs: [
+      `Depending on where you live, you may have rights to access, correct, or delete data held about you. Since we don't collect personally identifying information directly, most such requests would need to go through Google Analytics' own tools and opt-outs. You're welcome to contact us with any questions.`,
+    ],
+  },
+  {
+    heading: "Changes to This Policy",
+    paragraphs: [
+      `We may update this policy from time to time. The "Last updated" date at the top of this page reflects the most recent revision.`,
+    ],
+  },
+  {
+    heading: "Contact",
+    paragraphs: [
+      `Questions about this policy can be sent to <a href="mailto:oleg.posyniak@gmail.com">oleg.posyniak@gmail.com</a>.`,
+    ],
+  },
+];
+---
+
+<Layout title="Privacy Policy — Elevation Finance" description="How Elevation Finance collects and uses information on elevation-finance.com.">
+  <Header />
+  <main>
+    <LegalContent title="Privacy Policy" updated="July 11, 2026" sections={sections} />
+  </main>
+  <Footer />
+</Layout>

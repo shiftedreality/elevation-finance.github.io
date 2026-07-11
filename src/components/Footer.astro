@@ -6,7 +6,8 @@ const currentYear = new Date().getFullYear();
 const links = [
   { href: "https://apps.apple.com/us/app/elevation-finance-tools/id6778583335", label: "Get the App" },
   { href: "https://www.facebook.com/elevation.finance", label: "Facebook" },
-  { href: "https://shiftedreality.dev/elevation-finance/privacy-policy/", label: "Privacy Policy" },
+  { href: "/privacy-policy", label: "Privacy Policy" },
+  { href: "/terms-of-service", label: "Terms of Service" },
 ];
 ---
 
@@ -24,8 +25,8 @@ const links = [
           links.map((link) => (
             <a
               href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
               class="text-caption text-ef-gray transition-colors hover:text-ef-white"
             >
               {link.label}
