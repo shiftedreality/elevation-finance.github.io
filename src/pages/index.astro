@@ -1,0 +1,209 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Badge from "../components/Badge.astro";
+import Button from "../components/Button.astro";
+import Card from "../components/Card.astro";
+
+const promises = [
+  {
+    title: "Accuracy",
+    body: "We verify numbers, dates, and sources. If a mistake is discovered, we correct it publicly.",
+  },
+  {
+    title: "Simplicity",
+    body: "Finance is complicated enough. Every graphic should be understood within ten seconds.",
+  },
+  {
+    title: "Objectivity",
+    body: "No emotional language, no narratives to sell. We explain reality as accurately as possible.",
+  },
+  {
+    title: "Practicality",
+    body: "Readers leave with a better framework for decisions, not just a hot take.",
+  },
+  {
+    title: "Consistency",
+    body: "The same rigor and visual clarity, every week, so trust can compound over time.",
+  },
+];
+
+const beliefs = [
+  "Markets reward patience.",
+  "Compounding matters more than prediction.",
+  "Risk management beats excitement.",
+  "Consistency beats intensity.",
+  "Diversification is a strength.",
+  "Evidence beats opinions.",
+  "Long-term investing creates wealth.",
+  "Financial education changes lives.",
+];
+
+const formats = [
+  { category: "Markets", title: "Weekly Watchlist", body: "A short list of names showing real breakout signals, with the entry logic behind each one." },
+  { category: "ETF", title: "ETF Comparison", body: "Expense ratios, yield, and long-term return set side by side so the trade-offs are obvious." },
+  { category: "Deep Dive", title: "Company Deep Dive", body: "One business, examined through the numbers that actually matter to a long-term owner." },
+  { category: "Macro", title: "Economic Data", body: "Inflation, rates, employment — the indicators that move markets, explained without the jargon." },
+  { category: "Education", title: "Educational Explainer", body: "The concepts every investor eventually needs: compounding, diversification, risk, time horizon." },
+  { category: "Rankings", title: "Rankings & Leaderboards", body: "The largest companies, the highest yields, the best performers — ranked and sourced." },
+];
+---
+
+<Layout title="Elevation Finance — Investing clarity, without the noise">
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <div class="grid items-center gap-16 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <Badge variant="category">Data-Driven Investing Education</Badge>
+          <h1 class="mt-6 text-display-md text-ef-white sm:text-display-lg">
+            Investing clarity, <span class="text-ef-green">without the noise.</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-body-lg text-ef-gray">
+            Help everyday investors make better financial decisions through clear,
+            data-driven education — no hype, no fear, no speculation.
+          </p>
+          <div class="mt-10 flex flex-wrap items-center gap-4">
+            <Button href="https://www.facebook.com/elevation.finance" variant="primary">
+              Follow the Research
+            </Button>
+            <Button href="#approach" variant="secondary">
+              Our Approach
+            </Button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <Card variant="highlighted" class="!p-8">
+            <p class="text-caption font-semibold uppercase tracking-wide text-ef-gray">
+              The Simplicity Promise
+            </p>
+            <p class="mt-4 text-display-xl text-ef-green">10s</p>
+            <p class="mt-2 text-body text-ef-white">
+              Target time to understand the main idea of every graphic we publish.
+            </p>
+            <p class="mt-6 text-fine text-ef-muted">
+              Simple does not mean shallow. Simple means clear.
+            </p>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promises -->
+    <section id="approach" class="border-t border-ef-border bg-ef-surface/40">
+      <div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <div class="max-w-2xl">
+          <p class="text-caption font-semibold uppercase tracking-wide text-ef-gray">The Promise</p>
+          <h2 class="mt-4 text-h1 text-ef-white">Five commitments behind every post.</h2>
+          <p class="mt-4 text-body-lg text-ef-gray">
+            Trust compounds, just like investing. Every accurate infographic and honest
+            explanation is another deposit into the brand's reputation.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            promises.map((promise) => (
+              <Card>
+                <h3 class="text-h3 text-ef-white">{promise.title}</h3>
+                <p class="mt-3 text-body text-ef-gray">{promise.body}</p>
+              </Card>
+            ))
+          }
+
+          <Card variant="highlighted" class="flex flex-col justify-center">
+            <p class="text-caption font-semibold uppercase tracking-wide text-ef-green">Bottom Line</p>
+            <p class="mt-3 text-body text-ef-white">
+              Consistency builds familiarity. Familiarity builds trust. Trust builds brands.
+            </p>
+          </Card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beliefs -->
+    <section class="border-t border-ef-border">
+      <div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <div class="grid gap-12 lg:grid-cols-12">
+          <div class="lg:col-span-5">
+            <p class="text-caption font-semibold uppercase tracking-wide text-ef-gray">What We Believe</p>
+            <h2 class="mt-4 text-h1 text-ef-white">
+              A short, unglamorous list — and we're not straying from it.
+            </h2>
+            <p class="mt-4 text-body-lg text-ef-gray">
+              These beliefs shape every article, infographic, and chart we publish.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7">
+            <ul class="grid gap-4 sm:grid-cols-2">
+              {
+                beliefs.map((belief) => (
+                  <li class="flex items-start gap-3 rounded-card border border-ef-border bg-ef-surface px-5 py-4">
+                    <span class="mt-0.5 text-ef-green" aria-hidden="true">✓</span>
+                    <span class="text-body text-ef-white">{belief}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formats -->
+    <section id="formats" class="border-t border-ef-border bg-ef-surface/40">
+      <div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <div class="max-w-2xl">
+          <p class="text-caption font-semibold uppercase tracking-wide text-ef-gray">What We Publish</p>
+          <h2 class="mt-4 text-h1 text-ef-white">One format, one idea, every time.</h2>
+          <p class="mt-4 text-body-lg text-ef-gray">
+            Every piece is built from the same standardized components — so the format
+            disappears and only the insight remains.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            formats.map((format) => (
+              <Card>
+                <Badge variant="default">{format.category}</Badge>
+                <h3 class="mt-4 text-h3 text-ef-white">{format.title}</h3>
+                <p class="mt-3 text-body text-ef-gray">{format.body}</p>
+              </Card>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="updates" class="border-t border-ef-border">
+      <div class="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+        <Card variant="highlighted" class="flex flex-col items-start gap-6 !p-10 sm:flex-row sm:items-center sm:justify-between">
+          <div class="max-w-xl">
+            <h2 class="text-h1 text-ef-white">Get the research as it publishes.</h2>
+            <p class="mt-3 text-body-lg text-ef-gray">
+              Every deep dive publishes first on Facebook. For calculators and tools you
+              can use anytime, get the app.
+            </p>
+          </div>
+          <div class="flex shrink-0 flex-wrap gap-4">
+            <Button href="https://apps.apple.com/us/app/elevation-finance-tools/id6778583335" variant="primary">
+              Get the App
+            </Button>
+            <Button href="https://www.facebook.com/elevation.finance" variant="secondary">
+              Follow on Facebook
+            </Button>
+          </div>
+        </Card>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

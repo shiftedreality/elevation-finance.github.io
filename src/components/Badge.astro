@@ -1,0 +1,20 @@
+---
+interface Props {
+  variant?: "default" | "category" | "gold";
+  class?: string;
+}
+
+const { variant = "default", class: className = "" } = Astro.props;
+
+const variants = {
+  default: "bg-ef-surface-elevated text-ef-gray border border-ef-border",
+  category: "bg-ef-surface-elevated text-ef-blue border border-ef-border",
+  gold: "bg-ef-gold/10 text-ef-gold border border-ef-gold/30",
+};
+---
+
+<span
+  class={`inline-flex items-center gap-1.5 rounded-badge px-3 py-1 text-fine font-semibold uppercase tracking-wide ${variants[variant]} ${className}`}
+>
+  <slot />
+</span>

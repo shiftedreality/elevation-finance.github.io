@@ -1,0 +1,45 @@
+---
+import Logo from "./Logo.astro";
+
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { href: "https://apps.apple.com/us/app/elevation-finance-tools/id6778583335", label: "Get the App" },
+  { href: "https://www.facebook.com/elevation.finance", label: "Facebook" },
+  { href: "https://shiftedreality.dev/elevation-finance/privacy-policy/", label: "Privacy Policy" },
+];
+---
+
+<footer class="border-t border-ef-border">
+  <div class="mx-auto max-w-6xl px-6 py-12">
+    <div class="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+      <div class="flex flex-col gap-3">
+        <Logo />
+        <p class="max-w-sm text-caption text-ef-muted">
+          Clear, data-driven investing education for everyday investors. Not financial advice.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-caption text-ef-gray transition-colors hover:text-ef-white"
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col gap-2 border-t border-ef-border pt-6 text-fine text-ef-muted sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; {currentYear} Elevation Finance. All rights reserved.</p>
+      <p class="max-w-2xl sm:text-right">
+        Educational content only. Not investment, legal, or tax advice. Data is provided for informational purposes and may not reflect current market conditions.
+      </p>
+    </div>
+  </div>
+</footer>

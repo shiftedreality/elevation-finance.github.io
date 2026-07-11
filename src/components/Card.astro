@@ -1,0 +1,19 @@
+---
+// Standard card per brand-bible/02_Visual_Design_System/08_Cards.md
+interface Props {
+  variant?: "standard" | "highlighted" | "warning";
+  class?: string;
+}
+
+const { variant = "standard", class: className = "" } = Astro.props;
+
+const variants = {
+  standard: "bg-ef-surface border-ef-border",
+  highlighted: "bg-ef-surface-elevated border-ef-green/40",
+  warning: "bg-ef-surface border-ef-warning/40",
+};
+---
+
+<div class={`rounded-card border p-6 shadow-[0_1px_0_0_rgba(255,255,255,0.02)] ${variants[variant]} ${className}`}>
+  <slot />
+</div>

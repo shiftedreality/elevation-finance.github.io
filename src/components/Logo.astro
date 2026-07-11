@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo-horizontal.png";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props;
+---
+
+<a href="/" class={`inline-flex items-center ${className}`} aria-label="Elevation Finance home">
+  <Image src={logo} alt="Elevation Finance" height={32} class="w-auto" />
+</a>
